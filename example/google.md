@@ -26,8 +26,9 @@ fine tuned Santa Hat placements:
                   top: -50,
                   left: 580
               }, {
-                  top: -50,
-                  left: 580
+                  top: -10,
+                  left: 470,
+                  flip: true
               }, {
                   top: -50,
                   left: 580
