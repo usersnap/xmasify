@@ -1,0 +1,29 @@
+{
+  "name": "xmasify",
+  "version": "0.1.0",
+  "homepage": "https://github.com/usersnap/xmasify",
+  "description": "xmasify.js - christmasify your team page",
+  "main": "xmasify/xmasify.js",
+  "keywords": [
+    "christmas",
+    "team",
+    "page",
+    "fun",
+    "xmas",
+    "santa",
+    "jingle",
+    "bells"
+  ],
+  "authors": [
+    "Josef Trauner",
+    "Gregor Dorfbauer"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
