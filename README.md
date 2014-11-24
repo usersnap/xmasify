@@ -14,6 +14,8 @@ Embed the xmasify.js library to your page:
 <script type="text/javascript" src="xmasify/xmasify.js"></script>
 ```
 
+(Install is as easy as ```bower install xmasify```)
+
 Find your team page's DOM structure. Xmasify.js needs one wrapping element class for all
 team members and one selector class for a single team member. 
 
@@ -56,6 +58,13 @@ Xmasify.xmasify({
     member_sel: '.team-member',
     disableSound: false,
     static_dir: "/xmasify/",
+    defs: {
+        width: 200
+        top: -50,
+        left: 50,
+        rot: 0,
+        flip: false
+    },
     pos_map: [{
         width: 240,
         top: -104,

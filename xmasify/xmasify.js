@@ -39,14 +39,21 @@ var Xmasify = (function() {
 
 
     var BASE_URL = "/";
+    var defs = {
+        flip: false,
+        width: 200,
+        rot: 0,
+        top: -50,
+        left: 50
+    };
 
     function createHat(teamm, sett, idx) {
         sett = sett || {};
-        sett.flip = sett.flip || false;
-        sett.width = sett.width || 200;
-        sett.rot = sett.rot || 0;
-        sett.top = sett.top || -50;
-        sett.left = sett.left || 50;
+        sett.flip = sett.flip || defs.flip;
+        sett.width = sett.width || defs.width;
+        sett.rot = sett.rot || defs.rot;
+        sett.top = sett.top || defs.top;
+        sett.left = sett.left || defs.left;
 
         var hutStyle = document.createElement('style');
         hutStyle.type = 'text/css';
@@ -130,6 +137,7 @@ var Xmasify = (function() {
     };
 
     function christmas(options) {
+        options = options || {};
         var wrap_sel = options.wrap_sel;
         var member_sel = options.member_sel;
         var member_wrap_sel = options.member_wrap_sel;
@@ -139,6 +147,13 @@ var Xmasify = (function() {
         }
         if (options.static_dir) {
             BASE_URL = options.static_dir;
+        }
+        if (options.defs) {
+            for (var arg in options.defs) {
+                if (options.defs.hasOwnProperty(arg)) {
+                    defs[arg] = options.defs[arg];
+                }
+            }
         }
 
         createSharer();
@@ -150,15 +165,18 @@ var Xmasify = (function() {
             createHat(m, posMap[k], k);
         });
     }
+
     function christmas_loader(options) {
         if (!window.jQuery) {
             var script = document.createElement('script');
             script.type = "text/javascript";
             script.src = "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js";
-            script.onload = function() { christmas(options); };
+            script.onload = function() {
+                christmas(options);
+            };
             document.getElementsByTagName('head')[0].appendChild(script);
         } else {
-          christmas(options);
+            christmas(options);
         }
     };
     return {
