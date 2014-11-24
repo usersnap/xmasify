@@ -1,11 +1,10 @@
 /**
-  * xmasify.js - christmasify your team page
-  *
-  * written by Josef Trauner (@joseft_trauner) and Gregor Dorfbauer (@dorfbauer)
-  * for the Usersnap team page
-  *
-  **/
-
+ * xmasify.js - christmasify your team page
+ *
+ * written by Josef Trauner (@joseft_trauner) and Gregor Dorfbauer (@dorfbauer)
+ * for the Usersnap team page
+ *
+ **/
 /* Example usage:
 
 DOM-Structure:
@@ -38,12 +37,7 @@ Xmasify.xmasify({
 */
 var Xmasify = (function() {
 
-    if (!window.jQuery) {
-        var script = document.createElement('script');
-        script.type = "text/javascript";
-        script.src = "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js";
-        document.getElementsByTagName('head')[0].appendChild(script);
-    }
+
     var BASE_URL = "/";
 
     function createHat(teamm, sett, idx) {
@@ -91,8 +85,49 @@ var Xmasify = (function() {
         var audio = document.createElement("iframe");
         audio.src = "https://archive.org/embed/JingleBells_903&autoplay=1";
         document.body.appendChild(audio);
-        jQuery(audio).css({ position: "fixed", bottom: 0, left: 0, height: 30, width:100 });
+        jQuery(audio).css({
+            position: "fixed",
+            bottom: 0,
+            left: 0,
+            height: 30,
+            width: 100
+        });
     }
+
+    function createSharer() {
+        var sharer = document.createElement("div");
+        $(sharer).css({
+            position: "fixed",
+            top: 50,
+            right: 50,
+            width: 300,
+            height: 150,
+            background: "white",
+            color: "black",
+            border: "1px solid #888",
+            "text-align": "center"
+        });
+        sharer.innerHTML = "<h1 style='color:#666;font-size: 28px;margin:0;padding:0;line-height:1.2em;'>Share this xmasified team page</h1>" +
+            "<p style='color:#888; font-size:20px;padding:0;margin:0;'>" +
+            '<a href="https://twitter.com/share" class="twitter-share-button" data-text="Awesome xmasified team page powered by xmasify.js!" data-related="usersnap" data-hashtags="xmasify">Tweet</a>' +
+            '<iframe src="//www.facebook.com/plugins/share_button.php?href=' + escape(window.location.href) + '&amp;layout=button_count" scrolling="no" frameborder="0" style="height:20px;width:100px;border:none; overflow:hidden;" allowTransparency="true"></iframe>' +
+            "</p><p style='color:#888;font-size:14px;padding:30px 0 0 0;margin:0;'>" +
+            "<a style='color:#888;' href='https://github.com/usersnap/xmasify'>Xmasify your own team page</a> " +
+            " by <a style='color:#888;' href='https://usersnap.com?gat=xmas'>@usersnap</a></p>";
+
+        // load twitter sharer
+        ! function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'twitter-wjs');
+        document.body.appendChild(sharer);
+    };
 
     function christmas(options) {
         var wrap_sel = options.wrap_sel;
@@ -105,6 +140,8 @@ var Xmasify = (function() {
         if (options.static_dir) {
             BASE_URL = options.static_dir;
         }
+
+        createSharer();
         var memb = jQuery(wrap_sel);
         memb.find(member_sel).css('position', 'relative');
         var posMap = options.pos_map || [];
@@ -113,9 +150,20 @@ var Xmasify = (function() {
             createHat(m, posMap[k], k);
         });
     }
+    function christmas_loader(options) {
+        if (!window.jQuery) {
+            var script = document.createElement('script');
+            script.type = "text/javascript";
+            script.src = "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js";
+            script.onload = function() { christmas(options); };
+            document.getElementsByTagName('head')[0].appendChild(script);
+        } else {
+          christmas(options);
+        }
+    };
     return {
         xmasify: function(options) {
-            christmas(options);
+            christmas_loader(options);
         }
     };
 }());
