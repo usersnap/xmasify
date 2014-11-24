@@ -1,6 +1,6 @@
 {
   "name": "xmasify",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "homepage": "https://github.com/usersnap/xmasify",
   "description": "xmasify.js - christmasify your team page",
   "main": "xmasify/xmasify.js",
