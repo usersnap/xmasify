@@ -116,7 +116,7 @@ var Xmasify = (function() {
             "padding-top": 35
         });
         sharer.innerHTML = "<h1 style='font-family:Helvetica,Arial;color:#666;font-size: 28px;margin:0;padding:0;line-height:1.2em;'>Share this xmasified team page</h1>" +
-            '<img src="'+BASE_URL+'christmas_stuff.png" style="position: absolute; left: -30px; top: -50px;"/>'+
+            '<img src="'+BASE_URL+'christmas_stuff.png" style="max-width:initial; position: absolute; left: -30px; top: -50px;"/>'+
             "<p style='font-family:Helvetica,Arial;color:#888; font-size:20px;padding:0;margin:0;'>" +
             '<a href="https://twitter.com/share" class="twitter-share-button" data-text="Awesome xmasified team page powered by xmasify.js!" data-related="usersnap" data-hashtags="xmasify">Tweet</a>' +
             '<iframe src="//www.facebook.com/plugins/share_button.php?href=' + escape(window.location.href) + '&amp;layout=button_count" scrolling="no" frameborder="0" style="height:20px;width:100px;border:none; overflow:hidden;" allowTransparency="true"></iframe>' +
