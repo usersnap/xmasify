@@ -6,20 +6,39 @@ awesome christmas music with xmasify.js
 
 [![Example Team Page](example/example-team.jpg)](https://usersnap.com/team?gat=xmas)
 
-Quick Start
------------
-
-Embed the xmasify.js library to your page:
+Quick Start with Tag Manager
+----------------------------
+Create a new custom HTML [tag manager](https://www.google.com/tagmanager/) tag with the following content:
+Please make sure to adapt the DOM selectors ```wrap_sel``` and ```member_sel``` to your team page DOM layout.
 ```
-<script type="text/javascript" src="xmasify/xmasify.js"></script>
+<script type="text/javascript">
+(function() {
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = '//usersnap.github.io/xmasify/xmasify/xmasify.js';
+    var x = document.getElementsByTagName('script')[0];
+
+    s.onload = function() {
+        Xmasify.xmasify({
+            wrap_sel: '.team-members',
+            member_sel: '.team-member',
+            disableSound: false,
+            static_dir: "//usersnap.github.io/xmasify/xmasify/"
+        });
+    };
+    x.parentNode.insertBefore(s, x);
+})();
+</script>
 ```
+You can limit the placement to your team page and a time window in tag manager easily.
 
-(Install is as easy as ```bower install xmasify```)
+Find out the DOM structure of your team page
+--------------------------------------------
 
-Find your team page's DOM structure. Xmasify.js needs one wrapping element class for all
-team members and one selector class for a single team member. 
+Short example of a team page DOM: All team members are wrapped up in ```.team-members``` 
+whereas single team members have the ```.team-member``` class.
 
-Short example:
 ```
 <div class="team-members">
     <div class="team-member">
@@ -32,15 +51,32 @@ Short example:
 </div>
 ```
 
+This means  ```wrap_sel``` is  ```.team-members``` and  ```member_sel``` is  ```.team-member```.
+ ```member_sel``` is used to  ```.find()``` relative from the  ```wrap_sel```!
+
+Install on your site
+--------------------
+
+Embed the xmasify.js library to your page:
+```
+<script type="text/javascript" src="xmasify/xmasify.js"></script>
+```
+
+(Install is as easy as ```bower install xmasify```)
+
+Find your team page's DOM structure. Xmasify.js needs one wrapping element class for all
+team members and one selector class for a single team member. 
+
 Invoke Xmasify.js as follows:
 ```
 <script type="text/javascript">
 Xmasify.xmasify({
-    wrap_sel:    '.team-members',	// wrapping class
+    wrap_sel:    '.team-members',       // wrapping class
     member_sel:  '.team-member',        // person selector
-    disableSound: false,	        // disable auto-play music
+    disableSound: false,                // disable auto-play music
     static_dir:  "/xmasify/"            // where to find the christmas hat image
 });
+</script>
 ```
 
 Fine Tuning
