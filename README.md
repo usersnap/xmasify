@@ -4,7 +4,8 @@ xmasify.js - christmasify your team page
 X-masify your team page and add Santa's hat to every team member and
 awesome christmas music with xmasify.js
 
-A Santa’s hat and some awesome christmas music - that are the perfect ingredients for a shining christmas time :simple_smile:
+A Santa’s hat and some awesome christmas music - that are the perfect ingredients for a shining christmas time :-)
+
 We created some neat github library to christmasify your web worker’s life. Now it’s up to you to upgrade you team page!
 
 [![Example Team Page](example/example-team.jpg)](https://usersnap.com/team?gat=xmas)
