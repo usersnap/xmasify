@@ -1,8 +1,8 @@
 /**
  * xmasify.js - christmasify your team page
  *
- * written by Josef Trauner (@joseft_trauner) and Gregor Dorfbauer (@dorfbauer)
- * for the Usersnap team page
+ * written by Josef Trauner (@josef_trauner) and Gregor Dorfbauer (@dorfbauer)
+ * for the Usersnap team page https://usersnap.com/
  *
  **/
 /* Example usage:
