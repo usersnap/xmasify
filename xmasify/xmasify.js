@@ -80,7 +80,8 @@ var Xmasify = (function() {
             backgroundSize: sett.width + 'px',
             transform: 'rotateZ(' + sett.rot + 'deg)',
             top: sett.top,
-            left: sett.left
+            left: sett.left,
+            "z-index": 50000
         });
         if (sett.flip) {
             hut.css('transform', 'rotateY(180deg)');
@@ -113,7 +114,8 @@ var Xmasify = (function() {
             color: "black",
             border: "1px solid #888",
             "text-align": "center",
-            "padding-top": 35
+            "padding-top": 35,
+            "z-index": 50000
         });
         sharer.innerHTML = "<h1 style='font-family:Helvetica,Arial;color:#666;font-size: 28px;margin:0;padding:0;line-height:1.2em;'>Share this xmasified team page</h1>" +
             '<img src="'+BASE_URL+'christmas_stuff.png" style="max-width:initial; position: absolute; left: -30px; top: -50px;"/>'+
