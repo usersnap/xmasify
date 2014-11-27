@@ -104,7 +104,7 @@ var Xmasify = (function() {
 
     function createSharer() {
         var sharer = document.createElement("div");
-        $(sharer).css({
+        jQuery(sharer).css({
             position: "fixed",
             top: 50,
             right: 50,
