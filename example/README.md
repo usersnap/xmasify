@@ -6,7 +6,7 @@ Want to see yours in this collection? Please issue a pull request :-)
 Xmasify Examples
 ================
 
-Examples: [Atlassian](atlassian.md), [Codeship](codeship.md), [FoundersExperts](foundersexperts.md), [Google](google.md), [Microsoft](microsoft.md), [Ostheimer](ostheimer.md), [Product Hunt](producthunt.md), [Quora](quora.md) and [Usersnap](usersnap.md).
+Examples: [Atlassian](atlassian.md), [Codeship](codeship.md), [FoundersExperts](foundersexperts.md), [Google](google.md), [LingoHub](lingohub.md), [Ostheimer](ostheimer.md), [Product Hunt](producthunt.md), [Quora](quora.md) and [Usersnap](usersnap.md).
 
 Trivia
 ======

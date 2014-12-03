@@ -10,7 +10,7 @@ We created some neat github library to christmasify your web worker’s life. No
 
 Examples: [Atlassian](example/atlassian.md), [Codeship](example/codeship.md), 
 [FoundersExperts](example/foundersexperts.md), [Google](example/google.md), 
-[Microsoft](example/microsoft.md), [Ostheimer](example/ostheimer.md), 
+[LingoHub](example/lingohub.md), [Microsoft](example/microsoft.md), [Ostheimer](example/ostheimer.md), 
 [Product Hunt](example/producthunt.md), [Quora](example/quora.md) and 
 [Usersnap](example/usersnap.md).
 
